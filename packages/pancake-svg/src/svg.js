@@ -97,7 +97,7 @@ export const CompileAllSvgs = ( compiledAll, SettingsSVG, pkgPath ) => {
 				});
 				Log.verbose(`SVG: Adding sprites to the sprite machine`);
 				svgs.map(async svg => {
-					spriter.add( svg, null, await ReadFile( svg, { encoding: 'utf-8' } ) );
+					spriter.add(svg, null, _fs.readFileSync(svg, {encoding: 'utf-8'}));
 				});
 
 				Log.verbose(`SVG: Compile sprites into spritesheet`);
